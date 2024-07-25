@@ -409,7 +409,42 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 end)
 
 
+Section:NewButton("Meme seaGalto", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/Loader.lua"))()
+     print("Clicked")
+end)
 
+
+Section:NewButton("Meme seaOMG", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()
+     print("Clicked")
+end)
+
+
+Section:NewButton("Mm2 Yarmhub", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
+     print("Clicked")
+end)
+
+
+Section:NewButton("W-AzureTruev2", "ButtonInfo", function()
+getgenv().Team = "Pirates"
+getgenv().FixCrash = false -- Turn it On For Hopping Server, Improve Performance But Silent Aim On Mob And Player
+getgenv().FixCrash2 = false -- Turn it On For Hopping Server, Improve Performance But Will Remove Speed Changer
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+     print("Clicked")
+end)
+
+Section:NewButton("Matsunev1", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Matsune/main/matsunehubv1.lua"))()
+     print("Clicked")
+end)
+
+
+Section:NewButton("Matsunev4", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Matsune/main/matssunehub.lua"))()
+     print("Clicked")
+end)
 
 local Tab = Window:NewTab("| Credits |")
 local Section = Tab:NewSection("Made By Truong")
