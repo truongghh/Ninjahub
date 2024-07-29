@@ -446,6 +446,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Matsune/main
      print("Clicked")
 end)
 
+
+Section:NewButton("Redzmeme", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/MemeSea/main/Source.lua"))()
+     print("Clicked")
+end)
+
 local Tab = Window:NewTab("| Credits |")
 local Section = Tab:NewSection("Made By Truong")
 local Section = Tab:NewSection("Idea : SumitScripts")
