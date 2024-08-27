@@ -203,7 +203,144 @@ esp.TextSize = esp_settings.textsize
 esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
  
 game:GetService("RunService").RenderStepped:Connect(function()
-    for i,v in pairs
+    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then
+            esp.Text = "["..v.Name.."]"
+            gui:Clone().Parent = v.Character.Head
+    end
+end
+end)
+    print("Clicked")
+end)
+
+
+Section:NewButton("Hitbot", "ButtonInfo", function()
+_G.HeadSize = 10
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end) 
+    print("Clicked")
+end)
+
+
+Section:NewButton("InfiniteJump", "ButtonInfo", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+    print("Clicked")
+end)
+
+
+Section:NewButton("Anti Afk V1", "ButtonInfo", function()
+wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK Script"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="made by ur mom "
+_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)
+    print("Clicked")
+end)
+
+
+Section:NewButton("Anti Afk V2", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/brosula123/Anti-afk/main/Bl%C3%B8xzScript"))()
+    print("Clicked")
+end)
+
+
+Section:NewButton("Fly V3", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("| Tab1 |")
+local Section = Tab:NewSection("All Gamel2")
+Section:NewButton("Fps boost", "ButtonInfo", function()
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true-- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+    print("Clicked")
+end)
+
+
+Section:NewButton("Full Bright", "ButtonInfo", function()game:GetService("Lighting").Brightness = 2
+game:GetService("Lighting").ClockTime = 14
+game:GetService("Lighting").FogEnd = 100000
+game:GetService("Lighting").GlobalShadows = false
+game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+print("Clicked")
+end)
+
+Section:NewButton("Full Brightv2", "ButtonInfo", function()local Light = game:GetService("Lighting")
+
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+print("Clicked")
+end)
+
+Section:NewButton("EPs Skeleton","ButtonInfo",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/ESPs/main/SkeletonESP.lua"))()
+    print("Clicked")
+end)
+
+
 
 Section:NewButton("Hittbotv2","ButtonInfo",function()
 _G.HeadSize = 17
@@ -228,12 +365,13 @@ end)
 end)
 
 
+
 Section:NewButton("Eps Ff","ButtonInfo",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/truongghh/Ninjahub/main/Rader.lua"))()
      print("Clicked")
 end)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 local Tab = Window:NewTab("| Tab2 |")
 local Section = Tab:NewSection("All Gamel3")
 Section:NewButton("Meme seaGalto", "ButtonInfo", function()
@@ -283,3 +421,8 @@ local Tab = Window:NewTab("| Credits |")
 local Section = Tab:NewSection("Made By Truong")
 local Section = Tab:NewSection("Idea : SumitScripts")
 local Section = Tab:NewSection("Thankyou")
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
