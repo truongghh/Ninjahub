@@ -264,9 +264,9 @@ Light.LightingChanged:Connect(dofullbright)
 print("Clicked")
 end)
 
-Section:NewSlider("WalkSpeed",16,10000,function(value)
+Section:NewButton("WalkSpeed",Speed = 24,function(value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-    print("Slider")
+    print("Clicked")
 end)
 
 
