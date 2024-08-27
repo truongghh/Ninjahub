@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/datshort1/DatModV3/main/library"))()
-local Window = Library.CreateLib("Ninja🥷", "Ocean")
+local Window = Library.CreateLib("Ninjav2", "Ocean")
 local Tab = Window:NewTab("| Main |")
 local Section = Tab:NewSection("All Gamel")
 Section:NewButton("Eps Blue", "ButtonInfo", function()
@@ -106,8 +106,8 @@ end)
 
 Section:NewButton("Eps Name", "ButtonInfo", function()
 local esp_settings = { 
-    textsize = 25,
-    colour = 255,255,255
+    textsize = 27,
+    colour = 0,0,255
 }
  
 local gui = Instance.new("BillboardGui")
@@ -120,7 +120,7 @@ gui.ResetOnSpawn = false
 gui.AlwaysOnTop = true;
 gui.LightInfluence = 0;
 gui.Size = UDim2.new(1.75, 0, 1.75, 0);
-esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+esp.BackgroundColor3 = Color3.fromRGB(0, 0, 255);
 esp.Text = ""
 esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
 esp.BorderSizePixel = 4;
@@ -212,174 +212,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/
 end)
 
 
-Section:NewButton("Teleport menu", "ButtonInfo", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Teleport%20Gui.lua'))()
-    print("Clicked")
-end)
-
-
-Section:NewButton("Teleport menu2", "ButtonInfo", function()
-local gui = Instance.new("ScreenGui")
-gui.Name = "Teleport GUI"
-gui.Parent = game.Players.LocalPlayer.PlayerGui
-
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 150, 0, 70)
-frame.Position = UDim2.new(0, 10, 0, 10)
-frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-frame.BorderSizePixel = 3
-frame.BorderColor3 = Color3.new(1, 1, 1)
-frame.Active = true
-frame.Draggable = true
-frame.Parent = gui
-
-local label = Instance.new("TextLabel")
-label.Text = "Teleport to player:"
-label.Position = UDim2.new(0, 5, 0, 5)
-label.Size = UDim2.new(0, 100, 0, 20)
-label.TextColor3 = Color3.new(1, 1, 1)
-label.BackgroundTransparency = 1
-label.Parent = frame
-
-local textbox = Instance.new("TextBox")
-textbox.Position = UDim2.new(0, 5, 0, 25)
-textbox.Size = UDim2.new(0, 140, 0, 20)
-textbox.Text = ""
-textbox.ClearTextOnFocus = true
-textbox.Parent = frame
-
-local button = Instance.new("TextButton")
-button.Text = "Teleport"
-button.Position = UDim2.new(0, 5, 0, 50)
-button.Size = UDim2.new(0, 140, 0, 20)
-button.Parent = frame
-
-local madeBy = Instance.new("TextLabel")
-madeBy.Text = "Made by Truong"
-madeBy.Position = UDim2.new(0, 5, 0, 75)
-madeBy.Size = UDim2.new(0, 140, 0, 20)
-madeBy.TextColor3 = Color3.new(1, 1, 1)
-madeBy.BackgroundTransparency = 1
-madeBy.Parent = frame
-
-button.MouseButton1Click:Connect(function()
-    local targetName = textbox.Text
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        if string.find(string.lower(player.Name), string.lower(targetName)) then
-            game.Players.LocalPlayer.Character:MoveTo(player.Character.Head.Position)
-            break
-        end
-    end
-end)
-    print("Clicked")
-end)
-
-
-Section:NewButton("Fe Player", "ButtonInfo", function()
--- Objects
-plr = game.Players.LocalPlayer
-ControlGui = Instance.new("ScreenGui")
-Frame = Instance.new("Frame")
-TextButton = Instance.new("TextButton")
-TextBox = Instance.new("TextBox")
-
--- Properties
-
-ControlGui.Name = "ControlGui"
-ControlGui.Parent = plr.PlayerGui
-
-Frame.Parent = ControlGui
-Frame.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame.Position = UDim2.new(0, 300, 0, 200)
-Frame.Size = UDim2.new(0, 300, 0, 150)
-Frame.Active = true
-Frame.Draggable = true
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton.Position = UDim2.new(0, 50, 0, 90)
-TextButton.Size = UDim2.new(0, 200, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.FontSize = Enum.FontSize.Size32
-TextButton.Text = "Control"
-TextButton.TextSize = 30
-TextButton.MouseButton1Down:connect(function()
-	if TextButton.Text == "Control" then
-	TextButton.Text = "UnControl"	
-	workspace[TextBox.Text].Humanoid.PlatformStand = true
-	W1 = Instance.new("Weld",workspace)
-	W1.Name = "Weld1"
-	W1.Part0 = plr.Character.Torso
-	W1.Part1 = workspace[TextBox.Text].Torso
-	W2 = Instance.new("Weld",workspace)
-	W2.Name = "Weld2"
-	W2.Part0 = plr.Character.Head
-	W2.Part1 = workspace[TextBox.Text].Head
-	W3 = Instance.new("Weld",workspace)
-	W3.Name = "Weld3"
-	W3.Part0 = plr.Character.HumanoidRootPart
-	W3.Part1 = workspace[TextBox.Text].HumanoidRootPart
-	W4 = Instance.new("Weld",workspace)
-	W4.Name = "Weld4"
-	W4.Part0 = plr.Character["Left Arm"]
-	W4.Part1 = workspace[TextBox.Text]["Left Arm"]
-	W5 = Instance.new("Weld",workspace)
-	W5.Name = "Weld5"
-	W5.Part0 = plr.Character["Left Leg"]
-	W5.Part1 = workspace[TextBox.Text]["Left Leg"]
-	W6 = Instance.new("Weld",workspace)
-	W6.Name = "Weld6"
-	W6.Part0 = plr.Character["Right Arm"]
-	W6.Part1 = workspace[TextBox.Text]["Right Arm"]
-	W7 = Instance.new("Weld",workspace)
-	W7.Name = "Weld7"
-	W7.Part0 = plr.Character["Right Leg"]
-	W7.Part1 = workspace[TextBox.Text]["Right Leg"]
-	for i,v in pairs(plr.Character:GetChildren()) do
-			if v.ClassName == "Part" then
-				v.Transparency = 1
-			end
-			plr.Character.HumanoidRootPart.Transparency = 1
-			if v.ClassName == "Accessory" then
-				v.Handle.Transparency = 1
-			end
-			plr.Character.Humanoid.NameOcclusion = "NoOcclusion"
-	end
-	elseif TextButton.Text == "UnControl" then
-	TextButton.Text = "Control"
-	workspace[TextBox.Text].Humanoid.PlatformStand = false
-	workspace.Weld1:Remove()
-	workspace.Weld2:Remove()
-	workspace.Weld3:Remove()
-	workspace.Weld4:Remove()
-	workspace.Weld5:Remove()
-	workspace.Weld6:Remove()
-	workspace.Weld7:Remove()
-	for i,v in pairs(plr.Character:GetChildren()) do
-			if v.ClassName == "Part" then
-				v.Transparency = 0
-			end
-			plr.Character.HumanoidRootPart.Transparency = 1
-			if v.ClassName == "Accessory" then
-				v.Handle.Transparency = 0
-			end
-			plr.Character.Humanoid.NameOcclusion = "OccludeAll"
-	end
-end
-end)
-
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
-TextBox.Position = UDim2.new(0, 50, 0, 20)
-TextBox.Size = UDim2.new(0, 200, 0, 30)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.FontSize = Enum.FontSize.Size28
-TextBox.Text = "Name"
-TextBox.TextSize = 25
-    print("Clicked")
-end)
-
-
 Section:NewButton("Fps boost", "ButtonInfo", function()
 _G.Settings = {
     Players = {
@@ -409,6 +241,33 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 end)
 
 
+Section:NewButton("Full Bright", "ButtonInfo", function()game:GetService("Lighting").Brightness = 2
+game:GetService("Lighting").ClockTime = 14
+game:GetService("Lighting").FogEnd = 100000
+game:GetService("Lighting").GlobalShadows = false
+game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+print("Clicked")
+end)
+
+Section:NewButton("Full Brightv2", "ButtonInfo", function()local Light = game:GetService("Lighting")
+
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+print("Clicked")
+end)
+
+Section:NewSlider("WalkSpeed","SliderInfo"16,10000,function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+------------------------------------------------------------------------------
 Section:NewButton("Meme seaGalto", "ButtonInfo", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/Loader.lua"))()
      print("Clicked")
