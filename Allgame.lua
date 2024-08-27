@@ -179,7 +179,7 @@ end)
 Section:NewButton("Eps Name", "ButtonInfo", function()
 local esp_settings = { 
     textsize = 27,
-    colour = 0,0,255
+    colour = 0,255,0
 }
  
 local gui = Instance.new("BillboardGui")
