@@ -263,9 +263,11 @@ Light.LightingChanged:Connect(dofullbright)
 print("Clicked")
 end)
 
-Section:NewSlider("WalkSpeed","SliderInfo"16,10000,function(value)
+Section:NewSlider("WalkSpeed",16,10000,function(value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    print("Slider")
 end)
+
 
 ------------------------------------------------------------------------------
 Section:NewButton("Meme seaGalto", "ButtonInfo", function()
