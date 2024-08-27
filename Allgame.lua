@@ -1,3 +1,75 @@
+local Loader = Instance.new("ScreenGui")
+local LoaderMain = Instance.new("Frame")
+local C_ = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Info = Instance.new("TextLabel")
+local UF = Instance.new("Frame")
+local B_UICorner = Instance.new("UICorner")
+local GS = Instance.new("Frame")
+local A_UICorner = Instance.new("UICorner")
+local UIGradient_1 = Instance.new("UIGradient")
+Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Loader.Name = "Loader"
+Loader.Parent = game:GetService("CoreGui")
+LoaderMain.BorderSizePixel = 0
+LoaderMain.Size = UDim2.new(0, 0, 0, 0)
+LoaderMain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LoaderMain.Name = "LoaderMain"
+LoaderMain.ClipsDescendants = true
+LoaderMain.Position = UDim2.new(0.424795, 0, 0.413223, 0)
+LoaderMain.BackgroundColor3 = Color3.fromRGB(67, 255, 233)
+LoaderMain.Parent = Loader
+C_.Name = "C_"
+C_.CornerRadius = UDim.new(0, 10)
+C_.Parent = LoaderMain
+UIGradient.Name = "UIGradient"
+UIGradient.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1, Color3.fromRGB(35, 39, 255)) }
+UIGradient.Parent = LoaderMain
+Info.BorderSizePixel = 0
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Info.TextSize = 14
+Info.Size = UDim2.new(0, 350, 0, 50)
+Info.Name = "Info"
+Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Info.Text = "Wellcome To Async Loader Premium Soucre"
+Info.BackgroundTransparency = 1
+Info.Parent = LoaderMain
+UF.BorderSizePixel = 0
+UF.Size = UDim2.new(0, 0, 0, 28)
+UF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UF.Name = "UF"
+UF.ClipsDescendants = true
+UF.Position = UDim2.new(0.0342857, 0, 0.708571, 0)
+UF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UF.Parent = LoaderMain
+B_UICorner.Name = "B_UICorner"
+B_UICorner.Parent = UF
+GS.BorderSizePixel = 0
+GS.Size = UDim2.new(0, 0, 0, 28)
+GS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GS.Name = "GS"
+GS.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+GS.Parent = UF
+A_UICorner.Name = "A_UICorner"
+A_UICorner.Parent = GS
+UIGradient_1.Name = "UIGradient"
+UIGradient_1.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(120, 226, 255)), ColorSequenceKeypoint.new(0.39551, Color3.fromRGB(78, 237, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
+UIGradient_1.Parent = GS
+
+local TweenService = game:GetService("TweenService")
+TweenService:Create(LoaderMain,TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 350, 0, 50)}):Play()
+wait(1)
+TweenService:Create(LoaderMain,TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 350, 0, 140)}):Play()
+wait(1)
+TweenService:Create(UF,TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 323, 0, 28)}):Play()
+TweenService:Create(GS,TweenInfo.new(5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 323, 0, 28)}):Play()
+wait(5)
+Loader:Destroy()
+
+
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/datshort1/DatModV3/main/library"))()
 local Window = Library.CreateLib("Ninjav2", "Ocean")
 local Tab = Window:NewTab("| Main |")
@@ -264,13 +336,36 @@ Light.LightingChanged:Connect(dofullbright)
 print("Clicked")
 end)
 
-Section:NewButton("Speed",24,25,function(value)
-    game.Players.LocalPlayer.Character.Humanoid.Speed = value
+Section:NewButton("EPs Skeleton","ButtonInfo",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/ESPs/main/SkeletonESP.lua"))()
     print("Clicked")
 end)
 
 
+
+Section:NewButton("Hittbotv2","ButtonInfo",function()
+_G.HeadSize = 17
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really Light green")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+     print("Clicked")
+end)
 ------------------------------------------------------------------------------
+local Tab = Window:NewTab("| Tab2 |")
+local Section = Tab:NewSection("All Gamel3")
 Section:NewButton("Meme seaGalto", "ButtonInfo", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/Loader.lua"))()
      print("Clicked")
