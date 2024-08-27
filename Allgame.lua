@@ -211,7 +211,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/
     print("Clicked")
 end)
 
-
+local Tab = Window:NewTab("| Tad1 |")
+local Section = Tab:NewSection("All Gamel")
 Section:NewButton("Fps boost", "ButtonInfo", function()
 _G.Settings = {
     Players = {
